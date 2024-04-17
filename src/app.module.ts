@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from './Postagem/entities/postagem.entitty';
 import { PostagemModule } from './Postagem/postagem.module';
+import { Tema } from './tema/entities/tema.entity';
+import { TemaModule } from './tema/tema.module';
 
 @Module({
   imports: [ //Configura o modulo ORM na raiz do projeto.
@@ -14,10 +16,12 @@ import { PostagemModule } from './Postagem/postagem.module';
       username: 'root',
       password: '16121995',
       database: 'db_blogpessoal',
-      entities: [Postagem],
+      entities: [Postagem, Tema],
       synchronize: true,
+      logging: true,
     }),
-    PostagemModule
+    PostagemModule,
+    TemaModule
   ],
   controllers: [],
   providers: [],
