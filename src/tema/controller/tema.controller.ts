@@ -42,4 +42,7 @@ export class TemaController {
     return this.temaService.delete(id);
   }
 
+  
+
+
 }

@@ -4,7 +4,7 @@ import { Postagem } from "../entities/postagem.entitty";
 
 
 
-
+    
 @Controller("/postagens")
 export class PostagemController {
     constructor (private readonly postagemService: PostagemService) {}
@@ -44,7 +44,7 @@ update(@Body() postagem: Postagem): Promise<Postagem> {
 @HttpCode(HttpStatus.NO_CONTENT)
 delete(@Param('id', ParseIntPipe) id: number){
     return this.postagemService.delete(id);
-}
+} 
 
 
 }

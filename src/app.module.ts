@@ -4,8 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Postagem } from './Postagem/entities/postagem.entitty';
 import { PostagemModule } from './Postagem/postagem.module';
-import { Tema } from './tema/entities/tema.entity';
-import { TemaModule } from './tema/tema.module';
+import { Tema } from './Tema/entities/tema.entity';
+import { TemaModule } from './Tema/tema.module';
+
 
 @Module({
   imports: [ //Configura o modulo ORM na raiz do projeto.
