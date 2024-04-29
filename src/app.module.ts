@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Postagem } from './Postagem/entities/postagem.entitty';
-import { PostagemModule } from './Postagem/postagem.module';
-import { Tema } from './Tema/entities/tema.entity';
-import { TemaModule } from './Tema/tema.module';
-import { AuthModule } from './auth/auth.module';
+import { Tema } from './tema/entities/tema.entity';
 import { Usuario } from './auth/usuario/entities/usuario.entity';
+import { Postagem } from './postagem/entities/postagem.entity';
+import { PostagemModule } from './Postagem/postagem.module';
+import { TemaModule } from './tema/tema.module';
+import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './auth/usuario/usuario.module';
 
 
@@ -22,7 +22,7 @@ import { UsuarioModule } from './auth/usuario/usuario.module';
       database: 'db_blogpessoal',
       entities: [Postagem, Tema, Usuario],
       synchronize: true,
-      logging: true,
+     // logging: true,
     }),
     PostagemModule,
     TemaModule,

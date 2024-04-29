@@ -2,6 +2,7 @@
 /dist
 /node_modules
 /build
+/db_blogpessoal_test.db
 
 # Logs
 logs
