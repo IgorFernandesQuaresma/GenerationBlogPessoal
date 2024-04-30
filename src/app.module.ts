@@ -7,6 +7,7 @@ import { PostagemModule } from './postagem/postagem.module';
 import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ProdService } from './data/services/prod.service';
+import { DevService } from './data/services/dev.service';
 
 
 
@@ -15,7 +16,7 @@ import { ProdService } from './data/services/prod.service';
   imports: [ //Configura o modulo ORM na raiz do projeto.
   ConfigModule.forRoot(),
   TypeOrmModule.forRootAsync({
-    useClass: ProdService,
+    useClass: DevService,
     imports: [ConfigModule],
   }),
     PostagemModule,
