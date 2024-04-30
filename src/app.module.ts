@@ -4,11 +4,11 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Tema } from './tema/entities/tema.entity';
 import { Usuario } from './auth/usuario/entities/usuario.entity';
-import { Postagem } from './postagem/entities/postagem.entity';
-import { PostagemModule } from './Postagem/postagem.module';
 import { TemaModule } from './tema/tema.module';
 import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './auth/usuario/usuario.module';
+import { PostagemModule } from './postagem/postagem.module';
+import { Postagem } from './postagem/entities/postagem.entity';
 
 
 @Module({
@@ -22,7 +22,7 @@ import { UsuarioModule } from './auth/usuario/usuario.module';
       database: 'db_blogpessoal',
       entities: [Postagem, Tema, Usuario],
       synchronize: true,
-     // logging: true,
+      logging: true,
     }),
     PostagemModule,
     TemaModule,

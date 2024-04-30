@@ -7,11 +7,12 @@ import { Postagem } from '../src/postagem/entities/postagem.entity';
 import { Usuario } from '../src/auth/usuario/entities/usuario.entity';
 import { Tema } from '../src/tema/entities/tema.entity';
 
-describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
+ describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
 
   let token: any;
   let usuarioId: any;
   let app: INestApplication;
+  let postagemId: any
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -108,4 +109,20 @@ describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
     
   });
 
-})
+  
+  it('07 - Deve Criar Uma postagem', async () => {
+    const resposta = await request(app.getHttpServer())
+      .post('/postagens')
+      .set('Authorization', `${token}`)
+      .send({
+        titulo: "Criando postagem",
+		    texto: "Atualizado"
+      })
+    .expect(201)
+
+    postagemId = resposta.body.id;
+
+  })
+
+}) 
+
