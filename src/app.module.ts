@@ -16,7 +16,7 @@ import { PostagemModule } from './Postagem/postagem.module';
   imports: [ //Configura o modulo ORM na raiz do projeto.
   ConfigModule.forRoot(),
   TypeOrmModule.forRootAsync({
-    useClass: DevService,
+    useClass: ProdService,
     imports: [ConfigModule],
   }),
     PostagemModule,
