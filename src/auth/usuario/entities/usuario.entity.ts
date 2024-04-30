@@ -7,36 +7,27 @@ import { Postagem } from "../../../postagem/entities/postagem.entity"
 export class Usuario {
 
     @PrimaryGeneratedColumn() 
-    @ApiProperty({
-        type: Number
-    })
+    @ApiProperty()
     public id: number
 
     @IsNotEmpty()
     @Column({length: 255, nullable: false}) 
-    @ApiProperty({
-        type: String
-    }) 
+    @ApiProperty()
     public nome: string
 
     @IsEmail()
     @Column({length: 255, nullable: false })
-    @ApiProperty({example: "email@email.com.br",
-    type: String}) 
+    @ApiProperty({example: "email@email.com.br"}) 
     public usuario: string
 
     @IsNotEmpty()
     @MinLength(8)
     @Column({length: 255, nullable: false }) 
-    @ApiProperty({
-        type: String
-    })  
+    @ApiProperty() 
     public senha: string
 
     @Column({length: 5000 }) 
-    @ApiProperty({
-        type: String
-    }) 
+    @ApiProperty()
     public foto: string
 
     @ApiProperty({

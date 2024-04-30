@@ -7,17 +7,13 @@ import { ApiProperty } from "@nestjs/swagger";
 export class Tema {
 
     @PrimaryGeneratedColumn() //Define chave primaria e autoIncremento
-    @ApiProperty({
-        type: Number
-    })      
+    @ApiProperty()      
     id: number;
 
   
     @IsNotEmpty()
     @Column({length:255, nullable: false})
-    @ApiProperty({
-        type: String
-    })     
+    @ApiProperty()     
     descricao: string;
 
     @ApiProperty({
