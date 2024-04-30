@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Tema } from './tema/entities/tema.entity';
@@ -9,27 +8,24 @@ import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './auth/usuario/usuario.module';
 import { PostagemModule } from './postagem/postagem.module';
 import { Postagem } from './postagem/entities/postagem.entity';
+import { AppController } from './app.controller';
+import { ConfigModule } from '@nestjs/config';
+import { ProdService } from './data/services/prod.service';
 
 
 @Module({
   imports: [ //Configura o modulo ORM na raiz do projeto.
-    TypeOrmModule.forRoot({
-      type: 'mysql', 
-      host: 'localhost',
-      port: 3307,
-      username: 'root',
-      password: '16121995',
-      database: 'db_blogpessoal',
-      entities: [Postagem, Tema, Usuario],
-      synchronize: true,
-      logging: true,
-    }),
+  ConfigModule.forRoot(),
+  TypeOrmModule.forRootAsync({
+    useClass: ProdService,
+    imports: [ConfigModule],
+  }),
     PostagemModule,
     TemaModule,
-    AuthModule,
-    UsuarioModule
+    UsuarioModule,
+    AuthModule
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
