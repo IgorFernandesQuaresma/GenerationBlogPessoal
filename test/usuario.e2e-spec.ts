@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Postagem } from '../src/postagem/entities/postagem.entity';
+import { Postagem } from '../src/Postagem/entities/postagem.entity';
 import { Usuario } from '../src/auth/usuario/entities/usuario.entity';
 import { Tema } from '../src/tema/entities/tema.entity';
 

@@ -7,7 +7,7 @@ import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ProdService } from './data/services/prod.service';
 import { DevService } from './data/services/dev.service';
-import { PostagemModule } from './postagem/postagem.module';
+import { PostagemModule } from './Postagem/postagem.module';
 
 
 

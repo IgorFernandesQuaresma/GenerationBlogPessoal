@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from "@nestjs/typeorm";
-import { Postagem } from "../../postagem/entities/postagem.entity";
+import { Postagem } from "../../Postagem/entities/postagem.entity";
 import { Tema } from "../../tema/entities/tema.entity";
 import { Usuario } from "../../auth/usuario/entities/usuario.entity";
 
